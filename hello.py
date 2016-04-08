@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    x = str(test(3,2)) 
+    x = str(test(3,3)) 
     return x
 def test(a, b):
     return a + b
