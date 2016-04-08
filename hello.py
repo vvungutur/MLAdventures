@@ -1,14 +1,16 @@
+from flask import Flask, render_template, flash
 
-from flask import Flask
 app = Flask(__name__)
+app.config.update(
+    DEBUG=True,
+    SECRET_KEY='Erlang123'
+)
 
 @app.route("/")
-def hello():
-    x = str(test(3,3)) 
-    return x
-def test(a, b):
-    return a + b
+def show_entries():
+    entries = ['one', 'two', 'three']
+    flash('Hey, look! A message!')
+    return render_template('index.html', entries=entries)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=4567)
-
+    app.run()

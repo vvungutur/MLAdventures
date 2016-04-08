@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block body %}
+  <h2>This that Body jawn.</h2>
+  <ul class=entries>
+    {% for entry in entries %}
+      <li><h3>{{ entry|safe }}</h3>
+    {% else %}
+      <li><em>Wellp, you finally did it. Ran out of things to say, huh?</em>
+    {% endfor %}
+  </ul>
+{% endblock %}
