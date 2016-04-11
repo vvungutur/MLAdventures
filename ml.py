@@ -1,10 +1,13 @@
 from flask import Flask, render_template, flash
 
+# configuration
+DEBUG = True
+SECRET_KEY = '#notErlang'
+USERNAME = 'admin'
+PASSWORD = 'default'
+
 app = Flask(__name__)
-app.config.update(
-    DEBUG=True,
-    SECRET_KEY='Erlang123'
-)
+app.config.from_object(__name__)
 
 @app.route("/")
 def show_entries():
